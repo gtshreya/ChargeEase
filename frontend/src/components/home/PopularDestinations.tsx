@@ -9,13 +9,17 @@ type DestinationProps = {
 const DestinationCard: React.FC<DestinationProps> = ({ country, imageUrl }) => {
   return (
     <div className="relative rounded-lg overflow-hidden h-40 md:h-60 group cursor-pointer">
-      {/* We would use actual images in a real implementation */}
+      {/* Background image */}
       <div 
         className="absolute inset-0 bg-cover bg-center"
         style={{ backgroundImage: `url(${imageUrl})` }}
       ></div>
+
+      {/* Dark overlay */}
       <div className="absolute inset-0 bg-black opacity-20 group-hover:opacity-30 transition-opacity"></div>
-      <div className="absolute bottom-3 left-3 bg-white px-3 py-1 rounded-full text-sm font-medium">
+
+      {/* Country Badge */}
+      <div className="absolute bottom-3 left-3 bg-gray-100 dark:bg-gray-900 px-3 py-1 rounded-full text-sm font-medium text-gray-900 dark:text-white transition-colors">
         {country}
       </div>
     </div>
@@ -23,7 +27,6 @@ const DestinationCard: React.FC<DestinationProps> = ({ country, imageUrl }) => {
 };
 
 const PopularDestinations: React.FC = () => {
-  // In a real implementation, this would come from an API
   const destinations = [
     { id: 1, country: 'USA', imageUrl: '/images/destinations/usa.jpg' },
     { id: 2, country: 'Japan', imageUrl: '/images/destinations/japan.jpg' },
@@ -35,7 +38,9 @@ const PopularDestinations: React.FC = () => {
   
   return (
     <section className="mt-10">
-      <h2 className="text-lg font-semibold mb-4 text-white">Popular charging destinations</h2>
+      <h2 className="text-lg font-semibold mb-4 text-gray-900 dark:text-white transition-colors">
+        Popular charging destinations
+      </h2>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
         {destinations.map((destination) => (
           <DestinationCard 
