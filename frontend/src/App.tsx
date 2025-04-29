@@ -6,7 +6,7 @@ import Home from './components/Home';
 import Signup from './components/home/signup';
 import Login from './components/home/login';
 import StationListings from './components/StationListings'; // ✅ Add this line
-
+import Support from './components/Support';
 const App: React.FC = () => {
   return (
     <Router>
@@ -16,6 +16,7 @@ const App: React.FC = () => {
           <Route path="/signup" element={<Signup />} />
           <Route path="/login" element={<Login />} />
           <Route path="/stations" element={<StationListings />} /> {/* ✅ New Route */}
+          <Route path="/support" element={<Support />}/>
         </Routes>
       </MainLayout>
     </Router>
