@@ -107,7 +107,7 @@ const TopRatedSpots: React.FC = () => {
   
   return (
     <section className="mt-12">
-      <h2 className="text-lg font-semibold mb-4 text-white">Top-rated charging spots</h2>
+      <h2 className="text-lg font-semibold mb-4 text-gray-900 dark:text-white transition-colors">Top-rated charging spots</h2>
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
         {spots.map((spot) => (
           <ChargingSpotCard 
