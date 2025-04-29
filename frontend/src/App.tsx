@@ -3,8 +3,9 @@ import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import MainLayout from './components/layout/MainLayout';
 import Home from './components/Home';
-import Signup from './components/home/signup'; // <-- make sure the path is correct
-import Login from './components/home/login';   // <-- assuming you have a Login page too
+import Signup from './components/home/signup';
+import Login from './components/home/login';
+import StationListings from './components/StationListings'; // ✅ Add this line
 
 const App: React.FC = () => {
   return (
@@ -14,6 +15,7 @@ const App: React.FC = () => {
           <Route path="/" element={<Home />} />
           <Route path="/signup" element={<Signup />} />
           <Route path="/login" element={<Login />} />
+          <Route path="/stations" element={<StationListings />} /> {/* ✅ New Route */}
         </Routes>
       </MainLayout>
     </Router>
