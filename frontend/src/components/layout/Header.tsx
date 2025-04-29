@@ -1,6 +1,7 @@
 // src/components/layout/Header.tsx
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import { MoonIcon, SunIcon } from '@heroicons/react/24/outline'; // <-- Heroicons
 
 const Header: React.FC = () => {
   const [isDarkMode, setIsDarkMode] = useState<boolean>(() => {
@@ -37,14 +38,6 @@ const Header: React.FC = () => {
       </div>
 
       <div className="flex items-center space-x-2">
-        {/* 🌗 Dark/Light Mode Toggle Button */}
-        <button
-          onClick={toggleTheme}
-          className="text-2xl focus:outline-none hover:scale-110 transition-transform"
-        >
-          {isDarkMode ? '☀️' : '🌙'}
-        </button>
-
         {/* 🖊️ Sign Up Button */}
         <Link to="/signup">
           <button className="px-4 py-1 bg-transparent border border-gray-900 dark:border-white rounded-full 
@@ -59,6 +52,18 @@ const Header: React.FC = () => {
             Log in
           </button>
         </Link>
+
+        {/* 🌗 Dark/Light Mode Toggle */}
+        <button
+          onClick={toggleTheme}
+          className="focus:outline-none hover:scale-110 transition-transform"
+        >
+          {isDarkMode ? (
+            <SunIcon className="w-6 h-6 text-yellow-400" />
+          ) : (
+            <MoonIcon className="w-6 h-6 text-gray-700" />
+          )}
+        </button>
       </div>
     </header>
   );
