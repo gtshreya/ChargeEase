@@ -34,7 +34,9 @@ const Header: React.FC = () => {
       text-gray-900 dark:text-white transition-colors duration-500">
 
       <div className="flex items-center">
-        <h1 className="text-xl font-bold mr-10">ChargeEase</h1>
+        <Link to="/" className="text-xl font-bold mr-10 hover:opacity-80 transition-opacity">
+          ChargeEase
+        </Link>
         <nav className="hidden sm:flex space-x-6">
           <Link to="/stations" className="hover:text-gray-600 dark:hover:text-gray-300">Stations</Link>
           <a href="#" className="hover:text-gray-600 dark:hover:text-gray-300">Availability</a>
